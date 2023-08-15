@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Screen1</title>
+  <style>
+
+  .welcome {
+    text-align: center;
+    font: bold;
+    display: block;
+    font-size: 40px;
+  }
+
+  .text {
+  font-size: 16px;
+  color: black;
+}
+
+    .LMU{
+      width: 200px;
+      margin-right:0px;
+      margin-top: 20px;
+    }
+    .BW{
+      width: 300px;
+      margin-right: 0px;
+      margin-left: 500px;
+      margin-top: 20px;
+    }
+    .Study-Background{
+      display: block;
+      font: bold;
+      font-size: 34px;
+      color: orange;
+      border: 2px solid orange;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      width: 300px;
+
+    }
+    .Steps{
+      display: block;
+      font: bold;
+      font-size: 34px;
+      color: orange;
+      border: 2px solid orange;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      width: 300px;
+
+    }
+    .Data-Collection{
+      display: block;
+      font: bold;
+      font-size: 34px;
+      color: orange;
+      border: 2px solid orange;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      width: 50%;
+
+    }
+    .Data-Collection {
+      background-color: #f9f9f9;
+    }
+    .Data-Collection button {
+      display: block;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .Continue-button{
+      background-color: green;
+      color: aliceblue;
+      height: 50px;
+      width: 100px;
+      border: none;
+      border-radius: 3px;
+    }
+    .Cancel-button{
+      background-color: red;
+      color: white;
+      height: 50px;
+      width: 100px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      float: right;
+      margin-left: 10px;
+    }
+    .Continue{
+      color: aliceblue;
+      border: none;
+    }
+
+    .column {
+      float: left;
+      flex: 50%;
+      padding: 5px;
+    }
+   
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    .row{
+      display:flex;
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="column">
+      <img class="LMU" src="Pictures/Logo_LMU.svg">
+    </div>
+    <div class="column">
+      <img class="BW" src="Pictures/logo-unibw-text.svg">
+    </div>
+  </div>
+  <div class="welcome">
+    <strong>Welcome to <span style="color: orange">Quizzle</span></strong><br>
+  </div>
+  <br>
+  <div class="Study-Background">
+    Study Background
+  </div>
+  <div class="box">
+    <p>
+      Dear potential participants,<br>
+      <br>
+      thank you for your interest in our study! This study is part of research done by the University of Munich and the Bundeswehr University about user interactions in online quiz applications. The duration of the study is 5 days and during this time you will be asked to sign in daily to our "Quizzle" online application and answer general knowledge questions. For every question you answer correctly, you will earn 20 pence. To protect your wallet (which reflects your daily earnings) and to make sure the same person is signing in everyday, we use facial recognition authentication (similar to FaceID) to sign in to your account. On the last day of the study you will be asked to answer a longer questionnaire about your experience with our Quizzle system, and for finishing that final questionnaire you will receive a bonus of GBP 2.5.
+      <br>
+      <br>
+      <strong>Pre-requisites:</strong><br>
+      <ul>
+  <li>You need to have access to a computer with internet connection</li>
+  <li>You should be able to spend 10 minutes everyday to answer the questions</li>
+  <li>You need to have a camera connected to your computer for the facial recognition authentication</li>
+  <li>You need to be able to read and write in English or German language</li>
+  <li>You need to be at least 18 years old to participate in this study</li>
+</ul>
+</div>
+
+<div class="Steps">
+Steps to participate
+</div>
+<div class="box">
+<ol>
+<li>Read and accept the consent form and the data privacy statement.</li>
+<li>Fill in the registration form with your personal data.</li>
+<li>Take a selfie with your camera for the facial recognition authentication.</li>
+<li>Participate in the daily quiz and earn money.</li>
+<li>Complete the final questionnaire on the last day and earn a bonus of GBP 2.5.</li>
+</ol>
+</div>
+
+<div class="Data-Collection">
+  <div class="caption">Consent Form</div>
+  <div class="text">
+    <p>
+
+
+      <strong>1. I am aware that the collection, processing and use of my data is voluntary. The study can be canceled by me at any time without mentioning reasons and without causing me any disadvantages. <br>
+      In the event of cancellation, all data recorded of me will be irrevocably deleted.</strong><br>
+      <br>
+      <strong>2. I agree that my following data are processed:</strong><br>
+      <br>
+      &nbsp;&nbsp;&nbsp;   a) Prolific ID (required for compensation and bonus) <br>
+      &nbsp;&nbsp;&nbsp;   b) Demographics (age in years, gender, education, job status, technical affinity) <br>
+      &nbsp;&nbsp;&nbsp;   c) Webcam snapshot collected daily to ensure facial authentication <br>
+      &nbsp;&nbsp;&nbsp;   d) Results from questionnaires <br>
+      <br>
+      Your data will be needed to answer scientific research questions regarding user interaction with online applications. The study is not intended to evaluate you or your performance, but to help in designing usable valuable experiences. <br>
+      <br>
+
+      <strong>3. I have been informed that the study is pseudo-anonymous, this means my prolific ID will be associated with a snapshot taken by the webcam used by our facial recognition software..<br>
+       &nbsp;&nbsp; &nbsp; Latest by ENTER DATE the data collected with participant prolific IDs and face snapshots will be deleted and there will be no further association between the collected data and participants. </strong>
+      <br>
+      <br>
+
+      <strong>4. I agree that my data will be collected, processed, used and stored by Ludwig-Maximilians- Universitaet (LMU) Munich and Bundeswehr University Munich for the following purposes:</strong>
+      <br>
+      <br>
+
+      &nbsp;&nbsp;&nbsp;  a) The results and primary data of this study may be published by the LMU Munich and Bundeswehr University Munich as a scientific publication. The data is published completely anonymously, <br>
+      &nbsp;&nbsp;&nbsp; i.e., the collected data cannot be related to respective participants.<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;  b) The anonymized data is stored for an indefinite period of time.
+      <br>
+      <br>
+      <Strong>5. I have been informed that my personal data collected in the context of the above purposes will be processed in compliance with the General Data Protection Regulation (GDPR and BayDSG).<br>
+      Furthermore, I have been informed that I can amend the given consent without stating any reasons with effect for the future or revoke it completely. I can send my declaration of cancellation by contacting
+      VISAR/All of us.</Strong>
+      <br>
+      <br>
+      I have understood that my data will be completely anonymized latest by ENTER DATE thus cannot be deleted afterwards.
+      I am aware that according to the General Data Protection Regulation (GDPR) I have a right to information <br> about my personal data. For any further explanations, I can contact the study supervisors by e-mail: <br>
+
+      &nbsp;<a href="mailto:yomna.abdelrahmanj@unibw.de">Yomna Abdelrahman</a><br>
+      &nbsp;<a href="mailto:mariam.hassib@unibw.de">Mariam Hassib</a><br>
+      &nbsp;<a href="mailto:verena.distler@unibw.de">Verena Distler</a><br>
+      &nbsp;<a href="mailto:vcurraj@outlook.com">Visar Curraj</a><br>
+
+      <br>
+      By continuing with this form, I assure that I have read and understood the above consent and thus was informed about my rights. I certify that I agree to the processing of my data by the LMU Munich and Bundeswehr University Munich.
+      <br>
+      </p>
+        <p>To take part in this study you must agree that mentioned data is collected!</p>
+      </p>
+      <p> By clicking <Strong>"Continue"</Strong> you agree above mentioned data collection and you will be directed to the Login Window. </p>
+    </p></div>
+  <button class="Continue-button" onclick="window.location.href='register.php'">Continue</button>
+  <button class="Cancel-button" onclick="window.location.href='https://www.google.com'">Cancel</button>
+</div>
+
+
+</body>
+</html>

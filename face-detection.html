@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Face detection example</title>
+  </head>
+  <body>
+    <video id="videoElement"></video>
+    <canvas id="canvasElement"></canvas>
+    <button id="loginButton">Login with face detection</button>
+    <script src="/Quizvc/face-api.js-master/face-api.js"></script>
+
+    <!-- Load face-api.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@0.23.0"></script>
+
+    <!-- Load the models -->
+    <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/models/face_landmark_68_model-weights_manifest.json"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/models/tiny_face_detector_model-weights_manifest.json"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/models/face_recognition_model-weights_manifest.json"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/models/face_expression_model-weights_manifest.json"></script>
+
+    <script>
+      // JavaScript code
+      const canvasSize = { width: 640, height: 480 };
+      const video = document.getElementById('videoElement');
+      const canvas = document.getElementById('canvasElement');
+      const loginButton = document.getElementById('loginButton');
+
+      // Set the size of the canvas element
+      canvas.width = canvasSize.width;
+      canvas.height = canvasSize.height;
+
+      // Request access to the camera and display the camera feed in the video element
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+          video.srcObject = stream;
+          video.play();
+        })
+        .catch(error => {
+          console.error(error);
+        });
+
+      // Load the face detection model
+      Promise.all([
+        faceapi.nets.tinyFaceDetector.loadFromUri('/Quizvc/face-api.js-master/models'),
+        faceapi.nets.faceLandmark68Net.loadFromUri('/Quizvc/face-api.js-master/models'),
+        faceapi.nets.faceRecognitionNet.loadFromUri('/Quizvc/face-api.js-master/models'),
+        faceapi.nets.faceExpressionNet.loadFromUri('/Quizvc/face-api.js-master/models')
+      ]).then(() => {
+    // Add a listener to the login button that triggers face detection
+    loginButton.addEventListener('click', () => {
+      const canvasContext = canvas.getContext('2d');
+      canvasContext.drawImage(video, 0, 0, canvasSize.width, canvasSize.height, 0, 0, canvasSize.width, canvasSize.height);
+
+      faceapi.detectAllFaces(canvas).then(detections => {
+        // Draw the face detection results on the canvas element
+        faceapi.draw.drawDetections(canvas, detections);
+        faceapi.draw.drawFaceLandmarks(canvas, detections);
+        faceapi.draw.drawFaceExpressions(canvas, detections);
+      });
+    });
+  });
+
+
+    </script>
+  </body>
+</html>
